@@ -5,5 +5,5 @@
         "title": "Vet Clinic API Docs"
     },
     "host": "localhost:8080",
-    "schemes": ["http"]
+    "schemes": ["http", "https"]
 }
