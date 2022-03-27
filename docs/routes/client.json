@@ -1,5 +1,54 @@
    
 {
+    "/api/client/pets/:id": {
+        "patch": {
+            "description": "Update pets of the Client",
+            "tags": ["Client"],
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "description": "Client ID",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "in": "body",
+                    "name": "Body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/ClientPetUpdate"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        }
+    },
+    "/api/client/auth": {
+        "post": {
+            "description": "Auth client",
+            "tags": ["Client"],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "Body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/Auth"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        }
+    },
     "/api/client/": {
         "get": {
             "description": "Get all Clients",

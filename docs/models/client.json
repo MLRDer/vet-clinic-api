@@ -25,13 +25,26 @@
             "doctor": {
                 "type": "string",
                 "required": true
-            },
-            "pets": {
-                "type": "array",
-                "items": {
-                    "type": "string"
-                }
             }
+        }
+    },
+    "Auth": {
+        "type": "object",
+        "properties": {
+            "password": {
+                "type": "string",
+                "required": true
+            },
+            "username": {
+                "type": "string",
+                "required": true
+            }
+        }
+    },
+    "ClientPetUpdate": {
+        "type": "array",
+        "items": {
+            "type": "string"
         }
     }
 }

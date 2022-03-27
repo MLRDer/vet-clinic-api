@@ -33,12 +33,6 @@
             "date_of_birth": {
                 "type": "string",
                 "required": true
-            },
-            "clients": {
-                "type": "array",
-                "items": {
-                    "type": "string"
-                }
             }
         }
     }

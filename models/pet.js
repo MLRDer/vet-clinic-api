@@ -16,6 +16,10 @@ const petSchema = new Schema({
     type: String,
     required: true,
   },
+  owner: {
+    type: Schema.Types.ObjectId,
+    ref: "Clients",
+  },
 });
 
 module.exports = mongoose.model("Pets", petSchema);

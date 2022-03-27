@@ -2,10 +2,7 @@ const catchAsync = require("../utils/catch_async");
 const Client = require("../models/client");
 
 exports.getAll = catchAsync(async (req, res, next) => {
-  const clients = await Client.find()
-    .populate("pets")
-    .populate("doctor")
-    .lean();
+  const clients = await Client.find().populate("doctor").lean();
 
   res.status(200).json({
     success: true,
@@ -14,10 +11,7 @@ exports.getAll = catchAsync(async (req, res, next) => {
 });
 
 exports.get = catchAsync(async (req, res, next) => {
-  const client = await Client.findById(req.params.id)
-    .populate("pets")
-    .populate("doctor")
-    .lean();
+  const client = await Client.findById(req.params.id).populate("doctor").lean();
 
   res.status(200).json({
     success: true,
@@ -66,4 +60,16 @@ exports.auth = catchAsync(async (req, res, next) => {
       data: null,
     });
   }
+});
+
+exports.updatePets = catchAsync(async (req, res, next) => {
+  const client = await Client.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+    runValidators: true,
+  });
+
+  res.status(200).json({
+    success: true,
+    data: client,
+  });
 });

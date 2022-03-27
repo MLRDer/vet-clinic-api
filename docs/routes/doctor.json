@@ -1,5 +1,26 @@
    
 {
+    "/api/doctor/auth": {
+        "post": {
+            "description": "Auth doctor",
+            "tags": ["Doctor"],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "Body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/Auth"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        }
+    },
     "/api/doctor/": {
         "get": {
             "description": "Get all Doctors",
