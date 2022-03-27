@@ -29,7 +29,10 @@ exports.create = catchAsync(async (req, res, next) => {
 });
 
 exports.update = catchAsync(async (req, res, next) => {
-  const doctor = await Doctor.findByIdAndUpdate(req.params.id, req.body);
+  const doctor = await Doctor.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+    runValidators: true,
+  });
 
   res.status(200).json({
     success: true,

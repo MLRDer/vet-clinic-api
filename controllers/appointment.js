@@ -40,7 +40,11 @@ exports.create = catchAsync(async (req, res, next) => {
 exports.update = catchAsync(async (req, res, next) => {
   const appointment = await Appointment.findByIdAndUpdate(
     req.params.id,
-    req.body
+    req.body,
+    {
+      new: true,
+      runValidators: true,
+    }
   );
 
   res.status(200).json({
