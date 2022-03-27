@@ -1,0 +1,23 @@
+{
+    "NotificationCreate": {
+        "type": "object",
+        "properties": {
+            "title": {
+                "type": "string",
+                "required": true
+            },
+            "description": {
+                "type": "string",
+                "required": true
+            },
+            "to_client": {
+                "type": "string",
+                "required": true
+            },
+            "to_doctor": {
+                "type": "string",
+                "required": true
+            }
+        }
+    }
+}

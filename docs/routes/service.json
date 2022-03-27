@@ -1,0 +1,97 @@
+   
+{
+    "/api/service/": {
+        "get": {
+            "description": "Get all Services",
+            "tags": ["Service"],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        },
+        "post": {
+            "description": "Create Service",
+            "tags": ["Service"],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "Body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/ServiceCreate"
+                    }
+                }
+            ],
+            "responses": {
+                "201": {
+                    "description": "OK"
+                }
+            }
+        }
+    },
+    "/api/service/{id}": {
+        "get": {
+            "description": "Get Service by ID",
+            "tags": ["Service"],
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "description": "Service ID",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        },
+        "patch": {
+            "description": "Update Service",
+            "tags": ["Service"],
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "description": "Service ID",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "in": "body",
+                    "name": "Body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/ServiceCreate"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        },
+        "delete": {
+            "description": "Delete Service",
+            "tags": ["Service"],
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "description": "Service ID",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "204": {
+                    "description": "OK"
+                }
+            }
+        }
+    }
+}

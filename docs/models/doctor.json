@@ -1,0 +1,45 @@
+{
+    "DoctorCreate": {
+        "type": "object",
+        "properties": {
+            "username": {
+                "type": "string",
+                "required": true
+            },
+            "education": {
+                "type": "string",
+                "required": true
+            },
+            "experience": {
+                "type": "string",
+                "required": true
+            },
+            "field": {
+                "type": "string",
+                "required": true
+            },
+            "image": {
+                "type": "string",
+                "required": true
+            },
+            "phone": {
+                "type": "string",
+                "required": true
+            },
+            "email": {
+                "type": "string",
+                "required": true
+            },
+            "date_of_birth": {
+                "type": "string",
+                "required": true
+            },
+            "clients": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

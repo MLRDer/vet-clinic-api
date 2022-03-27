@@ -1,0 +1,97 @@
+   
+{
+    "/api/appointment/": {
+        "get": {
+            "description": "Get all appointments",
+            "tags": ["Appointment"],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        },
+        "post": {
+            "description": "Create appointment",
+            "tags": ["Appointment"],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "Body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/AppointmentCreate"
+                    }
+                }
+            ],
+            "responses": {
+                "201": {
+                    "description": "OK"
+                }
+            }
+        }
+    },
+    "/api/appointment/{id}": {
+        "get": {
+            "description": "Get Appointment by ID",
+            "tags": ["Appointment"],
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "description": "Appointment ID",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        },
+        "patch": {
+            "description": "Update Appointment",
+            "tags": ["Appointment"],
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "description": "Appointment ID",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "in": "body",
+                    "name": "Body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/AppointmentCreate"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        },
+        "delete": {
+            "description": "Delete Appointment",
+            "tags": ["Appointment"],
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "description": "Appointment ID",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "204": {
+                    "description": "OK"
+                }
+            }
+        }
+    }
+}

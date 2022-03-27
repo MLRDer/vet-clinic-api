@@ -1,0 +1,97 @@
+   
+{
+    "/api/pet/": {
+        "get": {
+            "description": "Get all Pets",
+            "tags": ["Pet"],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        },
+        "post": {
+            "description": "Create Pet",
+            "tags": ["Pet"],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "Body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/PetCreate"
+                    }
+                }
+            ],
+            "responses": {
+                "201": {
+                    "description": "OK"
+                }
+            }
+        }
+    },
+    "/api/pet/{id}": {
+        "get": {
+            "description": "Get Pet by ID",
+            "tags": ["Pet"],
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "description": "Pet ID",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        },
+        "patch": {
+            "description": "Update Pet",
+            "tags": ["Pet"],
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "description": "Pet ID",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "in": "body",
+                    "name": "Body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/PetCreate"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        },
+        "delete": {
+            "description": "Delete Pet",
+            "tags": ["Pet"],
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "description": "Pet ID",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "204": {
+                    "description": "OK"
+                }
+            }
+        }
+    }
+}

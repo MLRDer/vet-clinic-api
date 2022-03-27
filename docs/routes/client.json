@@ -1,0 +1,97 @@
+   
+{
+    "/api/client/": {
+        "get": {
+            "description": "Get all Clients",
+            "tags": ["Client"],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        },
+        "post": {
+            "description": "Create client",
+            "tags": ["Client"],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "Body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/ClientCreate"
+                    }
+                }
+            ],
+            "responses": {
+                "201": {
+                    "description": "OK"
+                }
+            }
+        }
+    },
+    "/api/client/{id}": {
+        "get": {
+            "description": "Get Client by ID",
+            "tags": ["Client"],
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "description": "Client ID",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        },
+        "patch": {
+            "description": "Update Client",
+            "tags": ["Client"],
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "description": "Client ID",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "in": "body",
+                    "name": "Body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/ClientCreate"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        },
+        "delete": {
+            "description": "Delete Client",
+            "tags": ["Client"],
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "description": "Client ID",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "204": {
+                    "description": "OK"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,97 @@
+   
+{
+    "/api/notification/": {
+        "get": {
+            "description": "Get all Notifications",
+            "tags": ["Notification"],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        },
+        "post": {
+            "description": "Create Notification",
+            "tags": ["Notification"],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "Body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/NotificationCreate"
+                    }
+                }
+            ],
+            "responses": {
+                "201": {
+                    "description": "OK"
+                }
+            }
+        }
+    },
+    "/api/notification/{id}": {
+        "get": {
+            "description": "Get Notification by ID",
+            "tags": ["Notification"],
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "description": "Notification ID",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        },
+        "patch": {
+            "description": "Update Notification",
+            "tags": ["Notification"],
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "description": "Notification ID",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "in": "body",
+                    "name": "Body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/NotificationCreate"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        },
+        "delete": {
+            "description": "Delete Notification",
+            "tags": ["Notification"],
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "description": "Notification ID",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "204": {
+                    "description": "OK"
+                }
+            }
+        }
+    }
+}

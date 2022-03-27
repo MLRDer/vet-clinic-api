@@ -1,0 +1,19 @@
+{
+    "ServiceCreate": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "required": true
+            },
+            "fee": {
+                "type": "string",
+                "required": true
+            },
+            "duration": {
+                "type": "string",
+                "required": true
+            }
+        }
+    }
+}

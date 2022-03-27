@@ -1,0 +1,27 @@
+   
+[
+    {
+        "name": "Appointment",
+        "description": "Appointment endpoints."
+    },
+    {
+        "name": "Client",
+        "description": "Client endpoints."
+    },
+    {
+        "name": "Doctor",
+        "description": "Doctor endpoints."
+    },
+    {
+        "name": "Notification",
+        "description": "Notification endpoints."
+    },
+    {
+        "name": "Pet",
+        "description": "Pet endpoints."
+    },
+    {
+        "name": "Service",
+        "description": "Service endpoints."
+    }
+]
