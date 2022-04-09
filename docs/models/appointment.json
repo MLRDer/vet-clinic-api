@@ -17,7 +17,7 @@
             "comment": {
                 "type": "string"
             },
-            "doctor": {
+            "veterinarian": {
                 "type": "string",
                 "required": true
             },

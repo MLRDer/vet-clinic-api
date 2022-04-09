@@ -1,9 +1,30 @@
    
 {
-    "/api/service/": {
+    "/api/vet/auth": {
+        "post": {
+            "description": "Auth Veterinarian",
+            "tags": ["Veterinarian"],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "Body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/Auth"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        }
+    },
+    "/api/vet/": {
         "get": {
-            "description": "Get all Services",
-            "tags": ["Service"],
+            "description": "Get all Veterinarians",
+            "tags": ["Veterinarian"],
             "responses": {
                 "200": {
                     "description": "OK"
@@ -11,15 +32,15 @@
             }
         },
         "post": {
-            "description": "Create Service",
-            "tags": ["Service"],
+            "description": "Create Veterinarian",
+            "tags": ["Veterinarian"],
             "parameters": [
                 {
                     "in": "body",
                     "name": "Body",
                     "required": true,
                     "schema": {
-                        "$ref": "#/definitions/ServiceCreate"
+                        "$ref": "#/definitions/VeterinarianCreate"
                     }
                 }
             ],
@@ -30,15 +51,15 @@
             }
         }
     },
-    "/api/service/{id}": {
+    "/api/vet/{id}": {
         "get": {
-            "description": "Get Service by ID",
-            "tags": ["Service"],
+            "description": "Get Veterinarian by ID",
+            "tags": ["Veterinarian"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
-                    "description": "Service ID",
+                    "description": "Veterinarian ID",
                     "required": true,
                     "type": "string"
                 }
@@ -50,13 +71,13 @@
             }
         },
         "patch": {
-            "description": "Update Service",
-            "tags": ["Service"],
+            "description": "Update Veterinarian",
+            "tags": ["Veterinarian"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
-                    "description": "Service ID",
+                    "description": "Veterinarian ID",
                     "required": true,
                     "type": "string"
                 },
@@ -65,7 +86,7 @@
                     "name": "Body",
                     "required": true,
                     "schema": {
-                        "$ref": "#/definitions/ServiceCreate"
+                        "$ref": "#/definitions/VeterinarianCreate"
                     }
                 }
             ],
@@ -76,13 +97,13 @@
             }
         },
         "delete": {
-            "description": "Delete Service",
-            "tags": ["Service"],
+            "description": "Delete Veterinarian",
+            "tags": ["Veterinarian"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
-                    "description": "Service ID",
+                    "description": "Veterinarian ID",
                     "required": true,
                     "type": "string"
                 }

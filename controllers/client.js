@@ -2,7 +2,7 @@ const catchAsync = require("../utils/catch_async");
 const Client = require("../models/client");
 
 exports.getAll = catchAsync(async (req, res, next) => {
-  const clients = await Client.find().populate("doctor").lean();
+  const clients = await Client.find().populate("veterinarian").lean();
 
   res.status(200).json({
     success: true,
@@ -11,7 +11,9 @@ exports.getAll = catchAsync(async (req, res, next) => {
 });
 
 exports.get = catchAsync(async (req, res, next) => {
-  const client = await Client.findById(req.params.id).populate("doctor").lean();
+  const client = await Client.findById(req.params.id)
+    .populate("veterinarian")
+    .lean();
 
   res.status(200).json({
     success: true,

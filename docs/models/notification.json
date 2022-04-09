@@ -14,7 +14,7 @@
                 "type": "string",
                 "required": true
             },
-            "to_doctor": {
+            "to_veterinarian": {
                 "type": "string",
                 "required": true
             }

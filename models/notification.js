@@ -23,9 +23,9 @@ const notificationSchema = new Schema({
     type: Schema.Types.ObjectId,
     refs: "Clients",
   },
-  to_doctor: {
+  to_veterinarian: {
     type: Schema.Types.ObjectId,
-    refs: "Doctors",
+    refs: "Veterinarians",
   },
   created_at: {
     type: Date,

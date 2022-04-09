@@ -14,7 +14,11 @@ const { Schema } = mongoose;
   clients [Client]
  */
 
-const doctorSchema = new Schema({
+const veterinarianSchema = new Schema({
+  fullname: {
+    type: String,
+    required: true,
+  },
   username: {
     type: String,
     required: true,
@@ -54,4 +58,4 @@ const doctorSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model("Doctors", doctorSchema);
+module.exports = mongoose.model("Doctors", veterinarianSchema);

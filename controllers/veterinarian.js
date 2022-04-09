@@ -1,8 +1,8 @@
 const catchAsync = require("../utils/catch_async");
-const Doctor = require("../models/doctor");
+const Veterinarian = require("../models/veterinarian");
 
 exports.getAll = catchAsync(async (req, res, next) => {
-  const doctors = await Doctor.find().lean();
+  const doctors = await Veterinarian.find().lean();
 
   res.status(200).json({
     success: true,
@@ -11,7 +11,7 @@ exports.getAll = catchAsync(async (req, res, next) => {
 });
 
 exports.get = catchAsync(async (req, res, next) => {
-  const doctor = await Doctor.findById(req.params.id).lean();
+  const doctor = await Veterinarian.findById(req.params.id).lean();
 
   res.status(200).json({
     success: true,
@@ -20,7 +20,7 @@ exports.get = catchAsync(async (req, res, next) => {
 });
 
 exports.create = catchAsync(async (req, res, next) => {
-  const doctor = await Doctor.create(req.body);
+  const doctor = await Veterinarian.create(req.body);
 
   res.status(201).json({
     success: true,
@@ -29,7 +29,7 @@ exports.create = catchAsync(async (req, res, next) => {
 });
 
 exports.update = catchAsync(async (req, res, next) => {
-  const doctor = await Doctor.findByIdAndUpdate(req.params.id, req.body, {
+  const doctor = await Veterinarian.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
     runValidators: true,
   });
@@ -41,7 +41,7 @@ exports.update = catchAsync(async (req, res, next) => {
 });
 
 exports.delete = catchAsync(async (req, res, next) => {
-  await Doctor.findByIdAndDelete(req.params.id);
+  await Veterinarian.findByIdAndDelete(req.params.id);
 
   res.status(204).json({
     success: true,
@@ -51,7 +51,7 @@ exports.delete = catchAsync(async (req, res, next) => {
 exports.auth = catchAsync(async (req, res, next) => {
   const { username, password } = req.body;
 
-  const doctor = await Doctor.findOne({ username: username }).lean();
+  const doctor = await Veterinarian.findOne({ username: username }).lean();
   if (doctor && doctor.password == password) {
     return res.status(200).json({
       success: true,

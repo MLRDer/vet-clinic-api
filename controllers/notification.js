@@ -2,10 +2,7 @@ const catchAsync = require("../utils/catch_async");
 const Notification = require("../models/notification");
 
 exports.getAll = catchAsync(async (req, res, next) => {
-  const notifications = await Notification.find()
-    .populate("to_client")
-    .populate("to_doctor")
-    .lean();
+  const notifications = await Notification.find().lean();
 
   res.status(200).json({
     success: true,
@@ -14,10 +11,7 @@ exports.getAll = catchAsync(async (req, res, next) => {
 });
 
 exports.get = catchAsync(async (req, res, next) => {
-  const notification = await Notification.findById(req.params.id)
-    .populate("to_client")
-    .populate("to_doctor")
-    .lean();
+  const notification = await Notification.findById(req.params.id).lean();
 
   res.status(200).json({
     success: true,

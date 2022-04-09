@@ -22,7 +22,7 @@
                 "type": "string",
                 "required": true
             },
-            "doctor": {
+            "veterinarian": {
                 "type": "string",
                 "required": true
             }

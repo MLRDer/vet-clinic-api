@@ -3,7 +3,7 @@ const Appointment = require("../models/appointment");
 
 exports.getAll = catchAsync(async (req, res, next) => {
   const appointments = await Appointment.find()
-    .populate("doctor")
+    .populate("veterinarian")
     .populate("client")
     .populate("pet")
     .lean();
@@ -17,7 +17,7 @@ exports.getAll = catchAsync(async (req, res, next) => {
 exports.get = catchAsync(async (req, res, next) => {
   const appointment = await Appointment.findById(req.params.id)
     .find()
-    .populate("doctor")
+    .populate("veterinarian")
     .populate("client")
     .populate("pet")
     .lean();

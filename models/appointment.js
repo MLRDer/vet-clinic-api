@@ -28,9 +28,9 @@ const appointmentSchema = new Schema({
   comment: {
     type: String,
   },
-  doctor: {
+  veterinarian: {
     type: Schema.Types.ObjectId,
-    ref: "Doctors",
+    ref: "Veterinarians",
   },
   client: {
     type: Schema.Types.ObjectId,

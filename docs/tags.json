@@ -9,8 +9,8 @@
         "description": "Client endpoints."
     },
     {
-        "name": "Doctor",
-        "description": "Doctor endpoints."
+        "name": "Veterinarian",
+        "description": "Veterinarian endpoints."
     },
     {
         "name": "Notification",
@@ -19,9 +19,5 @@
     {
         "name": "Pet",
         "description": "Pet endpoints."
-    },
-    {
-        "name": "Service",
-        "description": "Service endpoints."
     }
 ]

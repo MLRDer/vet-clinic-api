@@ -34,9 +34,9 @@ const clientSchema = new Schema({
     type: String,
     required: true,
   },
-  doctor: {
+  veterinarian: {
     type: Schema.Types.ObjectId,
-    ref: "Doctors",
+    ref: "Veterenarians",
   },
   created_at: {
     type: Date,
