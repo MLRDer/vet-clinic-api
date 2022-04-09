@@ -2,41 +2,45 @@ const catchAsync = require("../utils/catch_async");
 const Veterinarian = require("../models/veterinarian");
 
 exports.getAll = catchAsync(async (req, res, next) => {
-  const doctors = await Veterinarian.find().lean();
+  const veterinarians = await Veterinarian.find().lean();
 
   res.status(200).json({
     success: true,
-    data: doctors,
+    data: veterinarians,
   });
 });
 
 exports.get = catchAsync(async (req, res, next) => {
-  const doctor = await Veterinarian.findById(req.params.id).lean();
+  const veterinarian = await Veterinarian.findById(req.params.id).lean();
 
   res.status(200).json({
     success: true,
-    data: doctor,
+    data: veterinarian,
   });
 });
 
 exports.create = catchAsync(async (req, res, next) => {
-  const doctor = await Veterinarian.create(req.body);
+  const veterinarian = await Veterinarian.create(req.body);
 
   res.status(201).json({
     success: true,
-    data: doctor,
+    data: veterinarian,
   });
 });
 
 exports.update = catchAsync(async (req, res, next) => {
-  const doctor = await Veterinarian.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-    runValidators: true,
-  });
+  const veterinarian = await Veterinarian.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    {
+      new: true,
+      runValidators: true,
+    }
+  );
 
   res.status(200).json({
     success: true,
-    data: doctor,
+    data: veterinarian,
   });
 });
 
@@ -51,11 +55,13 @@ exports.delete = catchAsync(async (req, res, next) => {
 exports.auth = catchAsync(async (req, res, next) => {
   const { username, password } = req.body;
 
-  const doctor = await Veterinarian.findOne({ username: username }).lean();
-  if (doctor && doctor.password == password) {
+  const veterinarian = await Veterinarian.findOne({
+    username: username,
+  }).lean();
+  if (veterinarian && veterinarian.password == password) {
     return res.status(200).json({
       success: true,
-      data: doctor,
+      data: veterinarian,
     });
   } else {
     return res.status(200).json({
